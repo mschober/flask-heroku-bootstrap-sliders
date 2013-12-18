@@ -20,6 +20,9 @@ def page_not_found(e):
 def index():
     return render_template('index.html')
 
+@app.route("/sliders")
+def sliders():
+    return render_template('sliders.html')
 
 # launch
 if __name__ == "__main__":
