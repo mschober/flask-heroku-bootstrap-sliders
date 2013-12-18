@@ -24,6 +24,10 @@ def index():
 def sliders():
     return render_template('sliders.html')
 
+@app.route("/slider")
+def slider():
+    return render_template('slider.html')
+
 # launch
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
