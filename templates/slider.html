@@ -161,41 +161,13 @@
       		<h3>Example 1:</h3>
       		<p>Basic example with custom formater and colored selected region via CSS.</p>
       		<div class="well">
-				<input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/>
+            <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14" data-slider-orientation="vertical" data-slider-selection="after"/>
+            <input id="ex2" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14" data-slider-orientation="vertical" data-slider-selection="after"/>
+            <input id="ex3" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14" data-slider-orientation="vertical" data-slider-selection="after"/>
+            <input id="ex4" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14" data-slider-orientation="vertical" data-slider-selection="after"/>
+            <input id="ex5" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14" data-slider-orientation="vertical" data-slider-selection="after"/>
+            <input id="ex6" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14" data-slider-orientation="vertical" data-slider-selection="after"/>
 			</div>
-      	</div>
-
-      	<div class='slider-example'>
-      		<h3>Example 2:</h3>
-      		<p>Range selector, options specified via data attribute.</p>
-      		<div class="well">
-      			Filter by price interval: <b>€ 10</b> <input id="ex2" type="text" class="span2" value="" data-slider-min="10" data-slider-max="1000" data-slider-step="5" data-slider-value="[250,450]"/> <b>€ 1000</b>
-      		</div>
-      	</div>
-
-      	<div class='slider-example'>
-      		<h3>Example 3:</h3>
-      		<p>Using events to work with the values and style the selection and handles via CSS. The tooltip is disabled and diferent shapes for the handles.</p>
-      		<div class="well">
-      			<p>
-	        	<b>R</b> <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="255" data-slider-step="1" data-slider-value="128" data-slider-id="RC" id="R" data-slider-tooltip="hide" data-slider-handle="square" />
-	            </p>
-	            <p>
-	            <b>G</b> <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="255" data-slider-step="1" data-slider-value="128" data-slider-id="GC" id="G" data-slider-tooltip="hide" data-slider-handle="round" />
-	            </p>
-	            <p>
-	            <b>B</b> <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="255" data-slider-step="1" data-slider-value="128" data-slider-id="BC" id="B" data-slider-tooltip="hide" data-slider-handle="triangle" />
-	            </p>
-	            <div id="RGB"></div>
-      		</div>
-      	</div>
-
-      	<div class='slider-example'>
-      		<h3>Example 4:</h3>
-      		<p>Vertical Slider with reversed values (largest to smallest).</p>
-      		<div class="well">
-      			<input id="ex4" type="text" data-slider-min="-5" data-slider-max="20" data-slider-step="1" data-slider-value="-3" data-slider-orientation="vertical"/>
-      		</div>
       	</div>
 
     </div> <!-- /container -->
@@ -209,61 +181,23 @@
     	$(document).ready(function() {
     		/* Example 1 */
 	    	$('#ex1').slider({
-	          	formater: function(value) {
-	            	return 'Current value: ' + value;
-	          	}
+          reversed: true
 	        });
-
-	    	/* Example 2 */
-	        $("#ex2").slider({});
-
-	        /* Example 3 */
-	        var RGBChange = function() {
-	          $('#RGB').css('background', 'rgb('+r.getValue()+','+g.getValue()+','+b.getValue()+')')
-	        };
-
-	        var r = $('#R').slider()
-	                	.on('slide', RGBChange)
-	                	.data('slider');
-	        var g = $('#G').slider()
-	                	.on('slide', RGBChange)
-	                	.data('slider');
-	        var b = $('#B').slider()
-	                	.on('slide', RGBChange)
-	                	.data('slider');
-
-	        /* Example 4 */
-	        $("#ex4").slider({
-	        	reversed : true
+	    	$('#ex2').slider({
+          reversed: true
 	        });
-
-	        /* Example 5 */
-	        $("#ex5").slider();
-			$("#destroyEx5Slider").click(function() {
-				$("#ex5").slider('destroy');
-			});
-
-			/* Example 6 */
-			$("#ex6").slider();
-			$("#ex6").on('slide', function(slideEvt) {
-				$("#ex6SliderVal").text(slideEvt.value);
-			});
-
-			/* Example 7 */
-			$("#ex7").slider();
-			$("#ex7-enabled").click(function() {
-				if(this.checked) {
-					$("#ex7").slider("enable");
-				}
-				else {
-					$("#ex7").slider("disable");
-				}
-			});
-
-			/* Example 8 */
-			$("#ex8").slider({
-				tooltip: 'always'
-			});
+	    	$('#ex3').slider({
+          reversed: true
+	        });
+	    	$('#ex4').slider({
+          reversed: true
+	        });
+	    	$('#ex5').slider({
+          reversed: true
+	        });
+	    	$('#ex6').slider({
+          reversed: true
+	        });
     	});
     </script>
     <!-- Placed at the end of the document so the pages load faster -->
